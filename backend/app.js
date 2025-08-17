@@ -12,8 +12,9 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  "event-app-eight-dusky.vercel.app", // your frontend
-  "http://localhost:3000",             // for local dev
+  "http://localhost:5173",                  // local dev (Vite usually runs here)
+  "https://event-app-hww2.vercel.app",      // your Vercel frontend
+  "https://event-app-eight-dusky.vercel.app" // if that’s another deployment
 ];
 
 app.use(
