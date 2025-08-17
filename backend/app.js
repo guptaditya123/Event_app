@@ -11,7 +11,17 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+  "https://event-app-hww2.vercel.app", // your frontend
+  "http://localhost:3000",             // for local dev
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Routes
