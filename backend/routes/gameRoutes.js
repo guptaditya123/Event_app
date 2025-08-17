@@ -1,13 +1,11 @@
-// backend/routes/gameRoutes.js
-import express from 'express';
-import { createGame, joinGame, getGames } from '../controllers/gameController.js';
-import { protect } from '../middleware/authMiddleware.js';
+import express from "express";
+import { createGame, joinGame, getGames } from "../controllers/gameController.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.get('/', getGames);
-router.post('/', protect, createGame);
-router.post('/join/:id', protect, joinGame);
-
+router.post("/", protect, createGame); // ✅ protect ensures req.user exists
+router.get("/", getGames);             // anyone can see games
+router.post("/join/:id", protect, joinGame);
 
 export default router;

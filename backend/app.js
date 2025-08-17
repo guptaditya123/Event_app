@@ -3,9 +3,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
-import authRoutes from './routes/authRoutes.js';
 import gameRoutes from './routes/gameRoutes.js';
-
+import authRoutes from './routes/authRoutes.js';
 
 dotenv.config();
 connectDB();
