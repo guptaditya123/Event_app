@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  "https://event-app-hww2.vercel.app", // your frontend
+  "event-app-eight-dusky.vercel.app", // your frontend
   "http://localhost:3000",             // for local dev
 ];
 
