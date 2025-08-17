@@ -26,12 +26,7 @@ export default function Landing() {
             >
               Get Started
             </Link>
-            <Link
-              to="/"
-              className="bg-transparent border-2 border-white px-8 py-4 rounded-lg hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-center"
-            >
-              View Games
-            </Link>
+            
           </div>
         </div>
 

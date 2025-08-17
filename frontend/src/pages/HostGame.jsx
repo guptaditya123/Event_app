@@ -104,28 +104,90 @@ const HostGame = () => {
         )}
 
         <form onSubmit={handleHost} className="space-y-3">
-          <div className="flex items-center py-3 px-2 rounded-lg bg-white border border-gray-200/50">
-            <input type="text" value={user?.name || ""} readOnly className="w-full bg-transparent text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Host name"/>
-          </div>
+  <div className="flex items-center py-3 px-2 rounded-lg bg-white border border-gray-200/50">
+    <input 
+      type="text" 
+      value={user?.name || ""} 
+      readOnly 
+      className="w-full bg-transparent text-gray-700 placeholder-gray-400 focus:outline-none" 
+      placeholder="Host name"
+    />
+  </div>
 
-          <input type="text" placeholder="Sport (e.g. Basketball, Soccer)" value={sport} onChange={(e) => setSport(e.target.value)} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 bg-white" required/>
+  <input 
+    type="text" 
+    placeholder="Sport (e.g. Basketball, Soccer)" 
+    value={sport} 
+    onChange={(e) => setSport(e.target.value)} 
+    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 bg-white" 
+    required
+  />
 
-          <input type="text" placeholder="Venue (e.g. Main Sports Complex)" value={venue} onChange={(e) => setVenue(e.target.value)} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 bg-white" required/>
+  <input 
+    type="text" 
+    placeholder="Venue (e.g. Main Sports Complex)" 
+    value={venue} 
+    onChange={(e) => setVenue(e.target.value)} 
+    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-200 bg-white" 
+    required
+  />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white" required/>
-            <div className="grid grid-cols-2 gap-2">
-              <input type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white" required/>
-              <input type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white" required/>
-            </div>
-          </div>
+  {/* Improved date/time section for mobile */}
+  <div className="space-y-3 md:space-y-0">
+    {/* Date input - full width on mobile */}
+    <div className="w-full">
+      <input 
+        type="date" 
+        value={date} 
+        onChange={(e) => setDate(e.target.value)} 
+        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white"
+        required
+      />
+    </div>
+    
+    {/* Time inputs - stacked on mobile, side by side on desktop */}
+    <div className="flex flex-col sm:flex-row gap-2 w-full">
+      <div className="flex-1">
+        <label className="block text-sm text-gray-500 mb-1">Start Time</label>
+        <input 
+          type="time" 
+          value={startTime} 
+          onChange={(e) => setStartTime(e.target.value)} 
+          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white"
+          required
+        />
+      </div>
+      <div className="flex-1">
+        <label className="block text-sm text-gray-500 mb-1">End Time</label>
+        <input 
+          type="time" 
+          value={endTime} 
+          onChange={(e) => setEndTime(e.target.value)} 
+          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white"
+          required
+        />
+      </div>
+    </div>
+  </div>
 
-          <input type="number" placeholder="Max Players" value={maxPlayers} onChange={(e) => setMaxPlayers(e.target.value)} min="1" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white" required/>
+  <input 
+    type="number" 
+    placeholder="Max Players" 
+    value={maxPlayers} 
+    onChange={(e) => setMaxPlayers(e.target.value)} 
+    min="1" 
+    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent bg-white" 
+    required
+  />
 
-          <button type="submit" disabled={isSubmitting} className={`w-full py-3 px-4 rounded-lg font-bold text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}>
-            {isSubmitting ? "Creating Game..." : "Host Game"}
-          </button>
-        </form>
+  <button 
+    type="submit" 
+    disabled={isSubmitting} 
+    className={`w-full py-3 px-4 rounded-lg font-bold text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
+  >
+    {isSubmitting ? "Creating Game..." : "Host Game"}
+  </button>
+</form>
       </div>
     </div>
   );

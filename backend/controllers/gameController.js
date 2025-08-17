@@ -35,7 +35,9 @@ export const createGame = async (req, res) => {
       endTime: end,
       host: req.user.id,
       maxPlayers,
-      players: [], // <-- start empty
+      players: [
+        { user: req.user.id, name: req.user.name } // Add host as first player
+      ],
     });
 
     res.json(game);
