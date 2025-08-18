@@ -14,7 +14,7 @@ export const signup = async (req, res) => {
     email = email.trim().toLowerCase();
     password = password.trim();
 
-    if (!email.endsWith("@iimcal.ac.in")) {
+    if (!email.endsWith("email@iimcal.ac.in")) {
       return res
         .status(400)
         .json({ message: "Only iimcal.ac.in emails allowed" });

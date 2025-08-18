@@ -14,7 +14,8 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",                  // local dev (Vite usually runs here)
   "https://event-app-hww2.vercel.app",  
-  "https://iimcal-ac-in.vercel.app",     // your Vercel frontend
+  "https://iimcal-ac-in.vercel.app",
+  "http://localhost:4173",                 // your Vercel frontend
   "https://event-app-eight-dusky.vercel.app" // if that’s another deployment
 ];
 
