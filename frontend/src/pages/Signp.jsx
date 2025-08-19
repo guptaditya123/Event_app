@@ -85,7 +85,7 @@ export default function Signp() { // Fixed typo in component name (was Signp)
               <input
                 id="email"
                 type="email"
-                placeholder="email@iimcal.ac.in"
+                placeholder="@email.iimcal.ac.in"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
