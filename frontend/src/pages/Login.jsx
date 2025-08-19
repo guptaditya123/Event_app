@@ -69,7 +69,7 @@ const handleLogin = async (e) => {
               <input
                 id="email"
                 type="email"
-                placeholder="email@iimcal.ac.in"
+                placeholder="@email.iimcal.ac.in"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
