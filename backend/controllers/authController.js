@@ -14,10 +14,10 @@ export const signup = async (req, res) => {
     email = email.trim().toLowerCase();
     password = password.trim();
 
-    if (!email.endsWith("email@iimcal.ac.in")) {
+    if (!email.endsWith("@email.iimcal.ac.in")) {
       return res
         .status(400)
-        .json({ message: "Only email@iimcal.ac.in emails allowed" });
+        .json({ message: "Only @email.iimcal.ac.in emails allowed" });
     }
 
     const existingUser = await User.findOne({ email });
